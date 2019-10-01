@@ -108,7 +108,7 @@ class MailMail(models.Model):
             )
             return
 
-        sg = SendGridAPIClient(apikey=api_key)
+        sg = SendGridAPIClient(api_key=api_key)
         for email in outgoing:
             try:
                 response = sg.client.mail.send.post(

@@ -45,7 +45,7 @@ class SendgridTemplate(models.Model):
             raise exceptions.UserError(
                 _('Missing sendgrid_api_key in conf file'))
 
-        sg = sendgrid.SendGridAPIClient(apikey=api_key)
+        sg = sendgrid.SendGridAPIClient(api_key=api_key)
         template_client = sg.client.templates
         msg = template_client.get().body
         result = json.loads(msg)
